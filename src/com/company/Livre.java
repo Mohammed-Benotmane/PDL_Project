@@ -1,10 +1,10 @@
 package com.company;
 
-public class Livre extends Document{
+public class Livre extends Document {
     String[] auteurNoms;
     String editorNom;
     String dateEdition;
-    int nombreDeVolume,nombreExemplaire;
+    int nombreDeVolume, nombreExemplaire;
 
     public Livre(String reference, String titre, String resume, String[] motsCles, String[] auteurNoms, String editorNom, String dateEdition, int nombreDeVolume, int nombreExemplaire) {
         super(reference, titre, resume, motsCles);
@@ -57,5 +57,18 @@ public class Livre extends Document{
     }
     //endregion
 
-
+    public void emprunt() {
+        for (int i = 0; i < Bibliotheque.disponible.size(); i++) {
+            if (reference.matches(Bibliotheque.disponible.get(i).getReference())) {
+                if (nombreExemplaire > 0) {
+                    nombreExemplaire--;
+                    Bibliotheque.emprunter.add(Bibliotheque.disponible.get(i));
+                    System.out.println("Le livre " + titre + " a bien été emprunté.");
+                } else {
+                    System.out.println("Le livre " + titre + " est indisponible.");
+                }
+                break;
+            }
+        }
+    }
 }
