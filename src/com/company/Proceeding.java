@@ -1,6 +1,6 @@
 package com.company;
 
-public class Proceeding {
+public class Proceeding extends Document{
     String designation;
     String dateSeminaire;
     String nomInstitution;

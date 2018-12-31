@@ -1,6 +1,6 @@
 package com.company;
 
-public class Livre {
+public class Livre extends Document{
     String[] auteurNoms;
     String editorNom;
     String dateEdition;

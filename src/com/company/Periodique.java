@@ -1,6 +1,6 @@
 package com.company;
 
-public class Periodique {
+public class Periodique extends Document{
     String nomEditeur;
     int numeroEdition;
     String dateApparition;

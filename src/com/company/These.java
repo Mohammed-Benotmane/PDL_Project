@@ -1,6 +1,6 @@
 package com.company;
 
-public class These {
+public class These extends Document{
     String nomEditeur;
     String dateSoutenance;
     String lieuSoutenance;
