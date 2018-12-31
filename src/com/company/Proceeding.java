@@ -5,7 +5,16 @@ public class Proceeding extends Document{
     String dateSeminaire;
     String nomInstitution;
     int nombreExemplaire;
-//region getters et setters
+
+    public Proceeding(String reference, String titre, String resume, String[] motsCles, String designation, String dateSeminaire, String nomInstitution, int nombreExemplaire) {
+        super(reference, titre, resume, motsCles);
+        this.designation = designation;
+        this.dateSeminaire = dateSeminaire;
+        this.nomInstitution = nomInstitution;
+        this.nombreExemplaire = nombreExemplaire;
+    }
+
+    //region getters et setters
     public String getDesignation() {
         return designation;
     }

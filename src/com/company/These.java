@@ -5,7 +5,16 @@ public class These extends Document{
     String dateSoutenance;
     String lieuSoutenance;
     int nombreExemplaire;
-//region getters et setters
+
+    public These(String reference, String titre, String resume, String[] motsCles, String nomEditeur, String dateSoutenance, String lieuSoutenance, int nombreExemplaire) {
+        super(reference, titre, resume, motsCles);
+        this.nomEditeur = nomEditeur;
+        this.dateSoutenance = dateSoutenance;
+        this.lieuSoutenance = lieuSoutenance;
+        this.nombreExemplaire = nombreExemplaire;
+    }
+
+    //region getters et setters
     public String getNomEditeur() {
         return nomEditeur;
     }

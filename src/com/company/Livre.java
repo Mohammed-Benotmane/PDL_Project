@@ -5,7 +5,17 @@ public class Livre extends Document{
     String editorNom;
     String dateEdition;
     int nombreDeVolume,nombreExemplaire;
-//region getters et setters
+
+    public Livre(String reference, String titre, String resume, String[] motsCles, String[] auteurNoms, String editorNom, String dateEdition, int nombreDeVolume, int nombreExemplaire) {
+        super(reference, titre, resume, motsCles);
+        this.auteurNoms = auteurNoms;
+        this.editorNom = editorNom;
+        this.dateEdition = dateEdition;
+        this.nombreDeVolume = nombreDeVolume;
+        this.nombreExemplaire = nombreExemplaire;
+    }
+
+    //region getters et setters
     public String[] getAuteurNoms() {
         return auteurNoms;
     }

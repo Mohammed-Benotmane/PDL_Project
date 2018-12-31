@@ -5,7 +5,16 @@ public class Periodique extends Document{
     int numeroEdition;
     String dateApparition;
     int nombreExemplaire;
-//region getters et setters
+
+    public Periodique(String reference, String titre, String resume, String[] motsCles, String nomEditeur, int numeroEdition, String dateApparition, int nombreExemplaire) {
+        super(reference, titre, resume, motsCles);
+        this.nomEditeur = nomEditeur;
+        this.numeroEdition = numeroEdition;
+        this.dateApparition = dateApparition;
+        this.nombreExemplaire = nombreExemplaire;
+    }
+
+    //region getters et setters
     public String getNomEditeur() {
         return nomEditeur;
     }

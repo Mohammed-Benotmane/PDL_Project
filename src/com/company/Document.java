@@ -5,7 +5,15 @@ public class Document {
     String titre;
     String resume;
     String[] motsCles;
-//region getters et setters
+
+    public Document(String reference, String titre, String resume, String[] motsCles) {
+        this.reference = reference;
+        this.titre = titre;
+        this.resume = resume;
+        this.motsCles = motsCles;
+    }
+
+    //region getters et setters
     public String getReference() {
         return reference;
     }
