@@ -57,7 +57,7 @@ public class Livre extends Document {
     }
     //endregion
 
-    public void emprunt() {
+    public void empruntLivre() {
         for (int i = 0; i < Bibliotheque.disponible.size(); i++) {
             if (reference.matches(Bibliotheque.disponible.get(i).getReference())) {
                 if (nombreExemplaire > 0) {
@@ -67,6 +67,23 @@ public class Livre extends Document {
                 } else {
                     System.out.println("Le livre " + titre + " est indisponible.");
                 }
+                break;
+            }
+        }
+    }
+
+    public void restituerLivre(){
+        for(int i=0;i<Bibliotheque.emprunter.size();i++){
+            if(reference.matches(Bibliotheque.emprunter.get(i).getReference())){
+                Bibliotheque.emprunter.remove(i);
+                System.out.println("Le livre "+ titre + "à bien été restituer");
+                break;
+            }
+        }
+
+        for(int j=0;j<Bibliotheque.disponible.size();j++){
+            if(reference.matches(Bibliotheque.disponible.get(j).getReference())){
+                nombreExemplaire++;
                 break;
             }
         }

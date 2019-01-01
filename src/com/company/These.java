@@ -47,4 +47,36 @@ public class These extends Document{
         this.nombreExemplaire = nombreExemplaire;
     }
 //endregion
+
+    public void empruntThese() {
+        for (int i = 0; i < Bibliotheque.disponible.size(); i++) {
+            if (reference.matches(Bibliotheque.disponible.get(i).getReference())) {
+                if (nombreExemplaire > 0) {
+                    nombreExemplaire--;
+                    Bibliotheque.emprunter.add(Bibliotheque.disponible.get(i));
+                    System.out.println("La thèse " + titre + " a bien été emprunté.");
+                } else {
+                    System.out.println("La thèse " + titre + " est indisponible.");
+                }
+                break;
+            }
+        }
+    }
+
+    public void restituerLivre(){
+        for(int i=0;i<Bibliotheque.emprunter.size();i++){
+            if(reference.matches(Bibliotheque.emprunter.get(i).getReference())){
+                Bibliotheque.emprunter.remove(i);
+                System.out.println("Le These "+ titre + "à bien été restituer");
+                break;
+            }
+        }
+
+        for(int j=0;j<Bibliotheque.disponible.size();j++){
+            if(reference.matches(Bibliotheque.disponible.get(j).getReference())){
+                nombreExemplaire++;
+                break;
+            }
+        }
+    }
 }
