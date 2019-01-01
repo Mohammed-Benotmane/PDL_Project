@@ -7,11 +7,10 @@ public class Periodique extends Document{
     int nombreExemplaire;
 
     public Periodique(String reference, String titre, String resume, String[] motsCles, String nomEditeur, int numeroEdition, String dateApparition, int nombreExemplaire) {
-        super(reference, titre, resume, motsCles);
+        super(reference, titre, resume, motsCles, nombreExemplaire);
         this.nomEditeur = nomEditeur;
         this.numeroEdition = numeroEdition;
         this.dateApparition = dateApparition;
-        this.nombreExemplaire = nombreExemplaire;
     }
 
     //region getters et setters
@@ -39,13 +38,6 @@ public class Periodique extends Document{
         this.dateApparition = dateApparition;
     }
 
-    public int getNombreExemplaire() {
-        return nombreExemplaire;
-    }
-
-    public void setNombreExemplaire(int nombreExemplaire) {
-        this.nombreExemplaire = nombreExemplaire;
-    }
 //endregion
 
 }

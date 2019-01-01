@@ -5,12 +5,14 @@ public class Document {
     String titre;
     String resume;
     String[] motsCles;
+    int nombreExemplaire;
 
-    public Document(String reference, String titre, String resume, String[] motsCles) {
+    public Document(String reference, String titre, String resume, String[] motsCles,int nombreExemplaire) {
         this.reference = reference;
         this.titre = titre;
         this.resume = resume;
         this.motsCles = motsCles;
+        this.nombreExemplaire = nombreExemplaire;
     }
 
     //region getters et setters
@@ -45,6 +47,15 @@ public class Document {
     public void setMotsCles(String[] motsCles) {
         this.motsCles = motsCles;
     }
+
+    public int getNombreExemplaire() {
+        return nombreExemplaire;
+    }
+
+    public void setNombreExemplaire(int nombreExemplaire) {
+        this.nombreExemplaire = nombreExemplaire;
+    }
+
     //endregion
 
 }

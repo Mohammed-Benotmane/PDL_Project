@@ -7,12 +7,11 @@ public class Livre extends Document {
     int nombreDeVolume, nombreExemplaire;
 
     public Livre(String reference, String titre, String resume, String[] motsCles, String[] auteurNoms, String editorNom, String dateEdition, int nombreDeVolume, int nombreExemplaire) {
-        super(reference, titre, resume, motsCles);
+        super(reference, titre, resume, motsCles,nombreExemplaire);
         this.auteurNoms = auteurNoms;
         this.editorNom = editorNom;
         this.dateEdition = dateEdition;
         this.nombreDeVolume = nombreDeVolume;
-        this.nombreExemplaire = nombreExemplaire;
     }
 
     //region getters et setters
@@ -48,13 +47,6 @@ public class Livre extends Document {
         this.nombreDeVolume = nombreDeVolume;
     }
 
-    public int getNombreExemplaire() {
-        return nombreExemplaire;
-    }
-
-    public void setNombreExemplaire(int nombreExemplaire) {
-        this.nombreExemplaire = nombreExemplaire;
-    }
     //endregion
 
     public void empruntLivre() {

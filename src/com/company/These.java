@@ -4,14 +4,12 @@ public class These extends Document{
     String nomEditeur;
     String dateSoutenance;
     String lieuSoutenance;
-    int nombreExemplaire;
 
     public These(String reference, String titre, String resume, String[] motsCles, String nomEditeur, String dateSoutenance, String lieuSoutenance, int nombreExemplaire) {
-        super(reference, titre, resume, motsCles);
+        super(reference, titre, resume, motsCles, nombreExemplaire);
         this.nomEditeur = nomEditeur;
         this.dateSoutenance = dateSoutenance;
         this.lieuSoutenance = lieuSoutenance;
-        this.nombreExemplaire = nombreExemplaire;
     }
 
     //region getters et setters
@@ -39,13 +37,6 @@ public class These extends Document{
         this.lieuSoutenance = lieuSoutenance;
     }
 
-    public int getNombreExemplaire() {
-        return nombreExemplaire;
-    }
-
-    public void setNombreExemplaire(int nombreExemplaire) {
-        this.nombreExemplaire = nombreExemplaire;
-    }
 //endregion
 
     public void empruntThese() {
@@ -63,7 +54,7 @@ public class These extends Document{
         }
     }
 
-    public void restituerLivre(){
+    public void restituerThese(){
         for(int i=0;i<Bibliotheque.emprunter.size();i++){
             if(reference.matches(Bibliotheque.emprunter.get(i).getReference())){
                 Bibliotheque.emprunter.remove(i);

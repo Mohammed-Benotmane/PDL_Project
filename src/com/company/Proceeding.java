@@ -4,14 +4,12 @@ public class Proceeding extends Document{
     String designation;
     String dateSeminaire;
     String nomInstitution;
-    int nombreExemplaire;
 
     public Proceeding(String reference, String titre, String resume, String[] motsCles, String designation, String dateSeminaire, String nomInstitution, int nombreExemplaire) {
-        super(reference, titre, resume, motsCles);
+        super(reference, titre, resume, motsCles, nombreExemplaire);
         this.designation = designation;
         this.dateSeminaire = dateSeminaire;
         this.nomInstitution = nomInstitution;
-        this.nombreExemplaire = nombreExemplaire;
     }
 
     //region getters et setters
@@ -39,12 +37,5 @@ public class Proceeding extends Document{
         this.nomInstitution = nomInstitution;
     }
 
-    public int getNombreExemplaire() {
-        return nombreExemplaire;
-    }
-
-    public void setNombreExemplaire(int nombreExemplaire) {
-        this.nombreExemplaire = nombreExemplaire;
-    }
 //endregion
 }
