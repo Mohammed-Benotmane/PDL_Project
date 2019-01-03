@@ -12,7 +12,7 @@ public class Bibliotheque {
             if (disponible.get(i).equals(document)) {
                 temp = disponible.get(i).getNombreExemplaire() + nombreDeDocument;
                 disponible.get(i).setNombreExemplaire(temp);
-                System.out.println("le nombre d'exemplaire a bien été modifier");
+                System.out.println("le nombre d'exemplaire est de: " + disponible.get(i).getNombreExemplaire());
                 break;
             }
         }

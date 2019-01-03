@@ -4,7 +4,7 @@ public class Livre extends Document {
     String[] auteurNoms;
     String editorNom;
     String dateEdition;
-    int nombreDeVolume, nombreExemplaire;
+    int nombreDeVolume;
 
     public Livre(String reference, String titre, String resume, String[] motsCles, String[] auteurNoms, String editorNom, String dateEdition, int nombreDeVolume, int nombreExemplaire) {
         super(reference, titre, resume, motsCles,nombreExemplaire);
@@ -68,7 +68,7 @@ public class Livre extends Document {
         for(int i=0;i<Bibliotheque.emprunter.size();i++){
             if(reference.matches(Bibliotheque.emprunter.get(i).getReference())){
                 Bibliotheque.emprunter.remove(i);
-                System.out.println("Le livre "+ titre + "à bien été restituer");
+                System.out.println("Le livre "+ titre + " à bien été restituer");
                 break;
             }
         }
